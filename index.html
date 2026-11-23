@@ -3,34 +3,63 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Japan Data Shield (JDS) | Simple Cyber-Crime Protection &amp; Grant Support</title>
+  <title>Japan Data Shield (JDS) | Protect Your Small Business From Cyber Attacks &amp; Data Leaks</title>
   <style>
-    :root { --navy: #0b1f3a; --blue: #164e87; --line: #06c755; --bg: #f8fafc; --card: #ffffff; --text: #1e293b; --muted: #475569; }
+    :root {
+      --navy: #09192f;
+      --blue: #164e87;
+      --red: #b91c1c;
+      --red-bg: #fef2f2;
+      --amber-bg: #fffbeb;
+      --green: #06c755;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #1e293b;
+      --muted: #475569;
+    }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; }
-    header { background: var(--navy); color: #fff; padding: 18px 24px; }
-    .nav { max-width: 1020px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
-    .brand { font-size: 1.25rem; font-weight: 700; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    header { background: var(--navy); color: #fff; padding: 16px 24px; position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+    .nav { max-width: 1060px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .brand { font-size: 1.25rem; font-weight: 800; letter-spacing: 0.3px; }
     .brand span { color: #38bdf8; }
-    .lang-btn { background: rgba(255,255,255,0.14); color: #fff; border: 1px solid rgba(255,255,255,0.35); padding: 7px 14px; border-radius: 6px; cursor: pointer; font-weight: 600; }
-    .banner { background: #fef3c7; color: #78350f; text-align: center; padding: 10px 16px; font-size: 0.92rem; font-weight: 600; border-bottom: 1px solid #fde68a; }
-    .hero { background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%); color: #fff; padding: 64px 24px; text-align: center; }
-    .hero-inner { max-width: 820px; margin: 0 auto; }
-    .hero h1 { font-size: 2rem; line-height: 1.3; margin-bottom: 16px; }
-    .hero p { font-size: 1.05rem; color: #e2e8f0; margin-bottom: 30px; }
+    .nav-actions { display: flex; gap: 10px; align-items: center; }
+    .lang-btn { background: rgba(255,255,255,0.14); color: #fff; border: 1px solid rgba(255,255,255,0.35); padding: 7px 14px; border-radius: 6px; cursor: pointer; font-weight: 700; font-size: 0.88rem; }
+    .lang-btn:hover { background: rgba(255,255,255,0.25); }
+    .banner { background: #fef3c7; color: #78350f; text-align: center; padding: 11px 16px; font-size: 0.93rem; font-weight: 700; border-bottom: 1px solid #fde68a; }
+    .hero { background: linear-gradient(135deg, #09192f 0%, #163d6b 100%); color: #fff; padding: 68px 24px; text-align: center; }
+    .hero-inner { max-width: 860px; margin: 0 auto; }
+    .badge-alert { display: inline-block; background: rgba(239, 68, 68, 0.2); border: 1px solid #f87171; color: #fecaca; padding: 5px 14px; border-radius: 999px; font-size: 0.85rem; font-weight: 700; margin-bottom: 18px; }
+    .hero h1 { font-size: 2.15rem; line-height: 1.3; margin-bottom: 18px; font-weight: 800; }
+    .hero p { font-size: 1.08rem; color: #e2e8f0; margin-bottom: 32px; max-width: 740px; margin-left: auto; margin-right: auto; }
     .cta-group { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
-    .btn { display: inline-block; padding: 14px 26px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem; }
-    .btn-line { background: var(--line); color: #fff; }
+    .btn { display: inline-block; padding: 15px 28px; border-radius: 8px; text-decoration: none; font-weight: 800; font-size: 1rem; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.22); }
+    .btn-line { background: var(--green); color: #fff; }
     .btn-email { background: #fff; color: var(--navy); }
-    .container { max-width: 1020px; margin: 0 auto; padding: 48px 24px; }
-    .section-title { text-align: center; font-size: 1.5rem; color: var(--navy); margin-bottom: 28px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
-    .card { background: var(--card); border-radius: 10px; padding: 24px; box-shadow: 0 2px 10px rgba(15,23,42,0.06); border: 1px solid #e2e8f0; }
-    .card h3 { color: var(--blue); font-size: 1.1rem; margin-bottom: 10px; }
+    .container { max-width: 1060px; margin: 0 auto; padding: 54px 24px; }
+    .section-kicker { text-align: center; color: var(--red); font-weight: 800; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+    .section-kicker.blue { color: var(--blue); }
+    .section-title { text-align: center; font-size: 1.7rem; color: var(--navy); margin-bottom: 12px; font-weight: 800; }
+    .section-sub { text-align: center; color: var(--muted); max-width: 720px; margin: 0 auto 34px; font-size: 1rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 22px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
+    .card { background: var(--card); border-radius: 12px; padding: 26px; box-shadow: 0 3px 14px rgba(15,23,42,0.06); border: 1px solid #e2e8f0; }
+    .card.danger { border-top: 4px solid var(--red); background: #fff; }
+    .card.danger h3 { color: var(--red); font-size: 1.12rem; margin-bottom: 10px; }
+    .card.gov { border-top: 4px solid #d97706; background: var(--amber-bg); }
+    .card.gov h3 { color: #92400e; font-size: 1.1rem; margin-bottom: 10px; }
+    .card.shield { border-top: 4px solid var(--blue); }
+    .card.shield h3 { color: var(--blue); font-size: 1.1rem; margin-bottom: 10px; }
     .card p { color: var(--muted); font-size: 0.95rem; }
-    .trust-box { background: #eff6ff; border-left: 4px solid var(--blue); padding: 22px 24px; border-radius: 8px; margin-top: 36px; }
-    .trust-box h3 { color: var(--navy); margin-bottom: 8px; }
-    footer { background: var(--navy); color: #cbd5e1; text-align: center; padding: 28px 16px; font-size: 0.9rem; margin-top: 40px; }
+    .fix-tag { display: inline-block; margin-top: 12px; background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; }
+    .band-gray { background: #f1f5f9; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; }
+    .trust-box { background: #eff6ff; border-left: 5px solid var(--blue); padding: 24px 26px; border-radius: 10px; margin-top: 38px; }
+    .trust-box h3 { color: var(--navy); margin-bottom: 8px; font-size: 1.15rem; }
+    .cta-panel { background: linear-gradient(135deg, #0b1f3a 0%, #164e87 100%); color: #fff; border-radius: 14px; padding: 44px 28px; text-align: center; margin-top: 48px; }
+    .cta-panel h2 { font-size: 1.65rem; margin-bottom: 12px; }
+    .cta-panel p { color: #e2e8f0; max-width: 680px; margin: 0 auto 26px; font-size: 1.02rem; }
+    footer { background: #061121; color: #cbd5e1; text-align: center; padding: 32px 16px; font-size: 0.9rem; }
     footer a { color: #7dd3fc; text-decoration: none; }
     [data-lang="ja"] { display: none; }
     body.ja [data-lang="en"] { display: none; }
@@ -42,70 +71,78 @@
   <header>
     <div class="nav">
       <div class="brand">Japan Data Shield <span>(JDS)</span></div>
-      <button class="lang-btn" onclick="document.body.classList.toggle('ja')">日本語 / English</button>
+      <div class="nav-actions">
+        <button class="lang-btn" onclick="document.body.classList.toggle('ja')">日本語 / English</button>
+      </div>
     </div>
   </header>
+
   <div class="banner">
-    <span data-lang="en">Urgent Notice: Up to 2/3 Government Cyber-Safety Subsidies Close December 1 — Book Your Free 15-Minute Check Today</span>
-    <span data-lang="ja">【重要】最大2/3が補助される「IT導入補助金（セキュリティ対策推進枠）」12月1日締切 — 無料15分健康診断 受付中</span>
+    <span data-lang="en">URGENT: Up to 2/3 Government Cyber-Safety Subsidies Close December 1 — Claim Your Free 15-Minute Risk Check Today</span>
+    <span data-lang="ja">【重要なお知らせ】最大2/3が補助される「IT導入補助金（セキュリティ対策推進枠）」12月1日締切 — 無料15分リスク診断 受付中</span>
   </div>
+
   <section class="hero">
     <div class="hero-inner">
-      <h1 data-lang="en">Simple, Flat-Rate Cyber-Crime Protection for Shops, Clinics, Hotels &amp; Schools</h1>
-      <h1 data-lang="ja">店舗・クリニック・ホテル・学校のためのシンプル＆定額制サイバー対策（ジャパンデータシールド）</h1>
-      <p data-lang="en">We block fake invoices, ransomware, and customer ID leaks across Japan, Hawaii, the USA, the Philippines &amp; ASEAN — without complicated tech jargon or surprise bills.</p>
-      <p data-lang="ja">偽請求書詐欺・ランサムウェア・個人情報漏洩から大切な事業を守ります。専門用語を使わない分かりやすい初期設定と月次点検、さらに最大2/3の補助金活用まで一括サポートいたします。</p>
+      <div class="badge-alert">
+        <span data-lang="en">SMALL BUSINESS CYBER REALITY CHECK</span>
+        <span data-lang="ja">中小店舗・クリニック・施設経営者様への緊急注意喚起</span>
+      </div>
+      <h1 data-lang="en">Hackers Don't Just Target Giant Banks — They Target Local Shops, Clinics &amp; Hotels Every Single Day</h1>
+      <h1 data-lang="ja">サイバー攻撃の標的は大企業だけではありません。今、地域の店舗・クリニック・ホテルが毎日狙われています</h1>
+
+      <p data-lang="en">Automated criminal bots scan small business websites, Wi-Fi routers, and email inboxes 24/7 looking for easy targets. One fake supplier invoice or one leaked folder of customer IDs can shut your business down overnight. We protect you simply, affordably, and without tech jargon.</p>
+      <p data-lang="ja">自動化された攻撃プログラムは24時間365日、対策が手薄な中小事業者の予約サイト・Wi-Fi・メールを探しています。たった1通の偽請求書や、1件の顧客身分証データ漏洩が、大切な事業の信用と営業を一夜で奪います。専門用語なしのシンプル・定額制で御社を守ります。</p>
+
       <div class="cta-group">
         <a class="btn btn-line" href="https://lin.ee" target="_blank" rel="noopener">
-          <span data-lang="en">Chat on LINE (Japan / 日本語・English)</span>
-          <span data-lang="ja">LINEで無料相談する（日本語・英語対応）</span>
+          <span data-lang="en">Chat on LINE Now (Japan / 日本語・English)</span>
+          <span data-lang="ja">LINEで今すぐ無料相談する（日本語・英語）</span>
         </a>
         <a class="btn btn-email" href="mailto:support@://japandatashield.com">
-          <span data-lang="en">Book Free 15-Min Cyber Check (Global / Email)</span>
-          <span data-lang="ja">メールで無料15分健康診断を申し込む</span>
+          <span data-lang="en">Book Free 15-Min Risk Check (Global / Email)</span>
+          <span data-lang="ja">メールで無料15分リスク診断を申し込む</span>
         </a>
       </div>
     </div>
   </section>
-  <main class="container">
-    <h2 class="section-title" data-lang="en">4 Practical Shields Installed Inside Your Business</h2>
-    <h2 class="section-title" data-lang="ja">事業を守る4つの実践セキュリティ対策</h2>
-    <div class="grid">
-      <div class="card">
-        <h3 data-lang="en">1. Fake-Invoice &amp; Email Lock</h3>
-        <h3 data-lang="ja">1. 偽請求書・なりすましメール遮断</h3>
-        <p data-lang="en">Strict domain authentication (SPF, DKIM, DMARC) and cloud filtering stop spoofed supplier invoices before staff click.</p>
-        <p data-lang="ja">厳格なドメイン認証（SPF/DKIM/DMARC）とフィルタリングで、取引先を装う偽請求書メールを未然にブロックします。</p>
+
+  <section class="container">
+    <div class="section-kicker">
+      <span data-lang="en">WHAT IS HAPPENING RIGHT NOW</span>
+      <span data-lang="ja">実際に起きている3つの深刻な被害</span>
+    </div>
+    <h2 class="section-title" data-lang="en">3 Everyday Traps Closing Small Businesses Down</h2>
+    <h2 class="section-title" data-lang="ja">中小事業者を営業停止に追い込む3つの現実</h2>
+    <p class="section-sub" data-lang="en">You don't need to be a tech expert to understand the real risks facing everyday business owners today:</p>
+    <p class="section-sub" data-lang="ja">難しい専門用語は不要です。現在、多くの店舗やオフィスで実際に発生している被害パターンをご覧ください。</p>
+
+    <div class="grid-3">
+      <div class="card danger">
+        <h3 data-lang="en">1. The Fake Supplier Invoice Trap</h3>
+        <h3 data-lang="ja">1. 取引先を装う「偽請求書」詐欺</h3>
+        <p data-lang="en">Criminals spoof your regular vendor's email address and send an urgent invoice with a "new bank account." Once staff wire the money, banks rarely recover it.</p>
+        <p data-lang="ja">いつもの仕入先や取引先になりすましたメールで「振込先口座が変更になりました」と偽請求書を送付。一度振り込んでしまうと資金はほぼ戻りません。</p>
       </div>
-      <div class="card">
-        <h3 data-lang="en">2. POS &amp; Workstation Protection</h3>
-        <h3 data-lang="ja">2. 業務PC・POSレジのウイルス防御</h3>
-        <p data-lang="en">Windows-first endpoint protection, Passkey/MFA login locks, and non-admin cashier accounts block ransomware.</p>
-        <p data-lang="ja">Windows Defender / ビジネスEDR、パスキー・多要素認証、権限分離によりランサムウェア感染を防止します。</p>
+      <div class="card danger">
+        <h3 data-lang="en">2. The "Saved Customer ID" Time Bomb</h3>
+        <h3 data-lang="ja">2. パソコンに残った「顧客身分証データ」の流出</h3>
+        <p data-lang="en">Keeping photos of driver's licenses, passports, or My Number cards on a shop PC or cloud folder is a legal time bomb. One leak triggers mandatory privacy-law penalties and lost trust.</p>
+        <p data-lang="ja">運転免許証・パスポート・マイナンバーカードの画像を店舗PCや共有フォルダに保存していませんか？一度漏洩すると個人情報保護法に基づく報告義務と社会的信用の失墜を招きます。</p>
       </div>
-      <div class="card">
-        <h3 data-lang="en">3. Website &amp; Wi-Fi Separation</h3>
-        <h3 data-lang="ja">3. Webサイト保護＆来客Wi-Fi分離</h3>
-        <p data-lang="en">Cloudflare web shielding hides booking sites from automated vulnerability scanners while isolating guest Wi-Fi from registers.</p>
-        <p data-lang="ja">Cloudflare WAFで予約サイトを攻撃スキャナから保護し、来客用Wi-Fiと会計ネットワークを完全に分離します。</p>
-      </div>
-      <div class="card">
-        <h3 data-lang="en">4. Zero-ID-Storage &amp; Locked Backups</h3>
-        <h3 data-lang="ja">4. 身分証データ非保持＆改ざん不能バックアップ</h3>
-        <p data-lang="en">Certified instant-purge eKYC keeps driver's licenses off shop PCs, paired with immutable daily cloud recovery snapshots.</p>
-        <p data-lang="ja">運転免許証等の画像を店舗PCに残さないeKYC連携と、万一数分で復旧できる日次クラウドバックアップを構築します。</p>
+      <div class="card danger">
+        <h3 data-lang="en">3. Locked Registers &amp; Hijacked Booking Sites</h3>
+        <h3 data-lang="ja">3. レジ停止と予約サイトの乗っ取り</h3>
+        <p data-lang="en">Outdated booking websites and open guest Wi-Fi allow ransomware to lock your computers and customer lists—demanding thousands of dollars just to reopen your doors.</p>
+        <p data-lang="ja">更新されていない予約サイトや来客用Wi-Fiの隙間からランサムウェアが侵入し、業務PCや顧客データを暗号化。営業再開と引き換えに高額な身代金を要求されます。</p>
       </div>
     </div>
-    <div class="trust-box">
-      <h3 data-lang="en">Non-Custodial &amp; Transparent by Design</h3>
-      <h3 data-lang="ja">安心の非カストディアル設計（お客様のデータ・資金は一切お預かりしません）</h3>
-      <p data-lang="en">Japan Data Shield configures proven, enterprise-grade tools directly inside your own business accounts. We never hold client funds or store your raw customer personal records on JDS servers.</p>
-      <p data-lang="ja">Japan Data Shieldは、信頼性の高い既存セキュリティツールをお客様ご自身の環境へ適切に初期設定・月次点検する支援サービスです。お客様の資金や顧客個人情報（PII）を自社サーバーで預かることは一切ございません。</p>
-    </div>
-  </main>
-  <footer>
-    <p><strong>Japan Data Shield (JDS / ジャパンデータシールド)</strong> — Yokohama, Japan &amp; Global Remote Support</p>
-    <p>Contact: <a href="mailto:support@japandatashield.com">support@japandatashield.com</a> | LINE: <a href="https://lin.ee" target="_blank" rel="noopener">@220mcobq</a></p>
-  </footer>
-</body>
-</html>
+  </section>
+
+  <section class="band-gray">
+    <div class="container">
+      <div class="section-kicker blue">
+        <span data-lang="en">FREE INTERNAL GOVERNANCE CHECKLIST</span>
+        <span data-lang="ja">今すぐ見直すべき社内管理（ガバナンス）の基本</span>
+      </div>
+      <h2 class="section-title" data-lang="en">3 Simple Governance Mistakes Most Small Teams Make</h2>
